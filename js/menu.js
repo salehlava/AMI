@@ -4,7 +4,7 @@
 import { $, $$, store, fold, esc, behavior, toast, ICONS } from './util.js';
 import { t, pick, num, money } from './i18n.js';
 import { state } from './state.js';
-import { FLAVORS, SWATCH } from './flavors.js';
+import { FLAVORS, SWATCH, FA_ALIASES } from './flavors.js';
 
 const KEYS = { open: 'ami-open', saved: 'ami-saved' };
 
@@ -55,6 +55,10 @@ export function swatchStyle(name, fallback) {
   return `--a:${a};--b:${colors[1] || a}`;
 }
 
+/** Persian search words for the English words in a drink's name */
+const aliasesFor = nameEn =>
+  fold(nameEn).split(/[^a-z0-9]+/).map(word => FA_ALIASES[word] || '').join(' ');
+
 const priceHtml = price =>
   price > 0 ? `<span class="price">${money(price)}</span>` : `<span class="price tbd">${num('000')}</span>`;
 
@@ -102,7 +106,7 @@ const navLink = (c, withCount) =>
 export function renderMenu() {
   cats = state.menu.categories.map(c => ({
     ...c,
-    items: c.items.map(it => ({ ...it, hay: fold(`${it.names.join(' ')} ${c.name.join(' ')} ${c.keys || ''}`) })),
+    items: c.items.map(it => ({ ...it, hay: fold(`${it.names.join(' ')} ${aliasesFor(it.names[0])} ${c.name.join(' ')} ${c.keys || ''}`) })),
   }));
 
   const count = extra => cats.filter(c => c.extra === extra).reduce((n, c) => n + c.items.length, 0);

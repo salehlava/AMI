@@ -18,7 +18,7 @@
     "code": "espresso-bar--espresso-100-robusta",
     "name": [
      "Espresso 100% Robusta",
-     "اسپرسو ۱۰۰٪ روبوستا"
+     "اسپرسو ۱۰۰ ربوستا"
     ],
     "price": 0,
     "temp": null
@@ -27,7 +27,7 @@
     "code": "espresso-bar--espresso-100-arabica",
     "name": [
      "Espresso 100% Arabica",
-     "اسپرسو ۱۰۰٪ عربیکا"
+     "اسپرسو ۱۰۰ عربیکا"
     ],
     "price": 0,
     "temp": null
@@ -81,7 +81,7 @@
     "code": "espresso-bar--affogato",
     "name": [
      "Affogato",
-     "آفوگاتو"
+     "آفاگاتو"
     ],
     "price": 0,
     "temp": "cold"
@@ -108,7 +108,7 @@
     "code": "espresso-bar--cinnamon-pumpkin",
     "name": [
      "Cinnamon Pumpkin",
-     "کدو حلوایی دارچینی"
+     "سینامون پامکین"
     ],
     "price": 0,
     "temp": null
@@ -117,7 +117,7 @@
     "code": "espresso-bar--lotus-latte",
     "name": [
      "Lotus Latte",
-     "لاته لوتوس"
+     "لوتوس لاته"
     ],
     "price": 0,
     "temp": null
@@ -135,7 +135,7 @@
     "code": "espresso-bar--pistachio-cream",
     "name": [
      "Pistachio Cream",
-     "کرم پسته"
+     "پسته کرم"
     ],
     "price": 0,
     "temp": null
@@ -144,7 +144,7 @@
     "code": "espresso-bar--v60",
     "name": [
      "V60",
-     "وی‌۶۰"
+     "V60"
     ],
     "price": 0,
     "temp": null
@@ -153,7 +153,7 @@
     "code": "espresso-bar--pistachio-affogato",
     "name": [
      "Pistachio Affogato",
-     "آفوگاتو پسته"
+     "آفاگاتو پسته"
     ],
     "price": 0,
     "temp": "cold"
@@ -179,7 +179,7 @@
     "code": "hot-bar--hot-chocolate",
     "name": [
      "Hot Chocolate",
-     "شکلات داغ"
+     "هات چاکلت"
     ],
     "price": 0,
     "temp": null
@@ -188,7 +188,7 @@
     "code": "hot-bar--dark-chocolate",
     "name": [
      "Dark Chocolate",
-     "شکلات تلخ"
+     "دارک چاکلت"
     ],
     "price": 0,
     "temp": null
@@ -197,7 +197,7 @@
     "code": "hot-bar--pink-chocolate",
     "name": [
      "Pink Chocolate",
-     "شکلات صورتی"
+     "پینک چاکلت"
     ],
     "price": 0,
     "temp": null
@@ -206,7 +206,7 @@
     "code": "hot-bar--white-chocolate",
     "name": [
      "White Chocolate",
-     "شکلات سفید"
+     "وایت چاکلت"
     ],
     "price": 0,
     "temp": null
@@ -224,7 +224,7 @@
     "code": "hot-bar--pumpkin-tea",
     "name": [
      "Pumpkin Tea",
-     "چای کدو حلوایی"
+     "چای پامکین"
     ],
     "price": 0,
     "temp": null
@@ -233,7 +233,7 @@
     "code": "hot-bar--spirulina-latte",
     "name": [
      "Spirulina Latte",
-     "لاته اسپیرولینا"
+     "اسپرولینا لاته"
     ],
     "price": 0,
     "temp": null
@@ -242,7 +242,7 @@
     "code": "hot-bar--ube-latte",
     "name": [
      "Ube Latte",
-     "لاته اوبه"
+     "اوبه لاته"
     ],
     "price": 0,
     "temp": null
@@ -251,7 +251,7 @@
     "code": "hot-bar--choco-coconut",
     "name": [
      "Choco Coconut",
-     "شکلات نارگیل"
+     "چوکو کوکونات"
     ],
     "price": 0,
     "temp": null
@@ -260,7 +260,7 @@
     "code": "hot-bar--choco-strawberry",
     "name": [
      "Choco Strawberry",
-     "شکلات توت‌فرنگی"
+     "چوکو استرابری"
     ],
     "price": 0,
     "temp": null
@@ -278,7 +278,7 @@
     "code": "hot-bar--hot-pistachio",
     "name": [
      "Hot Pistachio",
-     "پسته داغ"
+     "هات پسته"
     ],
     "price": 0,
     "temp": null
@@ -287,7 +287,7 @@
     "code": "hot-bar--hot-biscuit",
     "name": [
      "Hot Biscuit",
-     "بیسکویت داغ"
+     "هات بیسکو"
     ],
     "price": 0,
     "temp": null
@@ -314,7 +314,7 @@
     "code": "hot-bar--saffron-pistachio-milk",
     "name": [
      "Saffron Pistachio Milk",
-     "شیر زعفران پسته"
+     "شیر پسته زعفران"
     ],
     "price": 0,
     "temp": null
@@ -358,7 +358,7 @@
     "code": "cold-bar--guava-fresh",
     "name": [
      "Guava Fresh",
-     "گواوا فرش"
+     "گوآوا فرش"
     ],
     "price": 0,
     "temp": null
@@ -376,7 +376,7 @@
     "code": "cold-bar--peach-passion-fruit-iced-tea",
     "name": [
      "Peach Passion Fruit Iced Tea",
-     "آیس تی هلو و پشن‌فروت"
+     "آیس تی هلو پشن فروت"
     ],
     "price": 0,
     "temp": null
@@ -394,7 +394,7 @@
     "code": "cold-bar--lime-vanilla",
     "name": [
      "Lime Vanilla",
-     "لایم وانیل"
+     "لایم وانیلا"
     ],
     "price": 0,
     "temp": null
@@ -412,7 +412,7 @@
     "code": "cold-bar--iced-spirulina",
     "name": [
      "Iced Spirulina",
-     "آیس اسپیرولینا"
+     "آیس اسپرولینا"
     ],
     "price": 0,
     "temp": null
@@ -439,7 +439,7 @@
     "code": "cold-bar--black-mojito",
     "name": [
      "Black Mojito",
-     "موهیتو مشکی"
+     "بلک موهیتو"
     ],
     "price": 0,
     "temp": null
@@ -448,7 +448,7 @@
     "code": "cold-bar--red-mojito",
     "name": [
      "Red Mojito",
-     "موهیتو قرمز"
+     "رد موهیتو"
     ],
     "price": 0,
     "temp": null
@@ -492,7 +492,7 @@
     "code": "shakes-frappes--peanut-shake",
     "name": [
      "Peanut Shake",
-     "شیک بادام‌زمینی"
+     "شیک بادام زمینی"
     ],
     "price": 0,
     "temp": null
@@ -528,7 +528,7 @@
     "code": "shakes-frappes--oreo-shake",
     "name": [
      "Oreo Shake",
-     "شیک اورئو"
+     "شیک OREO"
     ],
     "price": 0,
     "temp": null
@@ -537,7 +537,7 @@
     "code": "shakes-frappes--chocolate-whey",
     "name": [
      "Chocolate Whey",
-     "شیک پروتئین شکلات"
+     "وی شکلاتی"
     ],
     "price": 0,
     "temp": null
@@ -582,7 +582,7 @@
     "code": "shakes-frappes--popcorn-frappe",
     "name": [
      "Popcorn Frappe",
-     "فراپه پاپ‌کورن"
+     "فراپه پاپ کورن"
     ],
     "price": 0,
     "temp": null
@@ -600,7 +600,7 @@
     "code": "shakes-frappes--spirulina-frappe",
     "name": [
      "Spirulina Frappe",
-     "فراپه اسپیرولینا"
+     "فراپه اسپرولینا"
     ],
     "price": 0,
     "temp": null
@@ -609,7 +609,7 @@
     "code": "shakes-frappes--coco-strawberry-frappe",
     "name": [
      "Coco Strawberry Frappe",
-     "فراپه نارگیل توت‌فرنگی"
+     "فراپه کوکو استرابری"
     ],
     "price": 0,
     "temp": null
@@ -653,7 +653,7 @@
     "code": "tea-herbal-tea--borage-herbal-tea",
     "name": [
      "Borage Herbal Tea",
-     "دمنوش گل گاوزبان"
+     "دمنوش گل گاو زبان"
     ],
     "price": 0,
     "temp": null
@@ -671,7 +671,7 @@
     "code": "tea-herbal-tea--orange-blossom-herbal-tea",
     "name": [
      "Orange Blossom Herbal Tea",
-     "دمنوش بهارنارنج"
+     "دمنوش بهار نارنج"
     ],
     "price": 0,
     "temp": null
@@ -691,7 +691,7 @@
   "id": "iced-coffee",
   "name": [
    "Iced Coffee",
-   "آیس کافی"
+   "سرد کافئین"
   ],
   "blurb": [
    "Coffee over ice and slow cold brew",
@@ -742,7 +742,7 @@
     "code": "iced-coffee--iced-cinnamon-pumpkin",
     "name": [
      "Iced Cinnamon Pumpkin",
-     "آیس کدو حلوایی دارچینی"
+     "آیس سینامون پامکین"
     ],
     "price": 0,
     "temp": null
@@ -769,7 +769,7 @@
     "code": "iced-coffee--iced-strawberry-matcha",
     "name": [
      "Iced Strawberry Matcha",
-     "آیس ماچا توت‌فرنگی"
+     "آیس ماچا توت فرنگی"
     ],
     "price": 0,
     "temp": null
@@ -807,7 +807,7 @@
   "id": "syrups",
   "name": [
    "Syrups",
-   "سیروپ‌ها"
+   "سیروپ ها"
   ],
   "blurb": [
    "Add any of these when you order a drink",
@@ -858,7 +858,7 @@
     "code": "syrups--passion-fruit",
     "name": [
      "Passion Fruit",
-     "پشن‌فروت"
+     "پشن فروت"
     ],
     "price": 0,
     "temp": null
@@ -876,7 +876,7 @@
     "code": "syrups--green-mix",
     "name": [
      "Green Mix",
-     "گرین میکس"
+     "گیرین میکس"
     ],
     "price": 0,
     "temp": null
@@ -903,7 +903,7 @@
     "code": "syrups--guava",
     "name": [
      "Guava",
-     "گواوا"
+     "گوآوا"
     ],
     "price": 0,
     "temp": null
@@ -912,7 +912,7 @@
     "code": "syrups--irish-cream",
     "name": [
      "Irish Cream",
-     "آیریش کریم"
+     "آیریش"
     ],
     "price": 0,
     "temp": null
@@ -921,7 +921,7 @@
     "code": "syrups--bubble-gum",
     "name": [
      "Bubble Gum",
-     "آدامس بادکنکی"
+     "بابل گام"
     ],
     "price": 0,
     "temp": null
@@ -948,7 +948,7 @@
     "code": "syrups--coca-cola",
     "name": [
      "Coca-Cola",
-     "کوکاکولا"
+     "کوکا کولا"
     ],
     "price": 0,
     "temp": null
@@ -966,7 +966,7 @@
     "code": "syrups--strawberry",
     "name": [
      "Strawberry",
-     "توت‌فرنگی"
+     "توت فرنگی"
     ],
     "price": 0,
     "temp": null
@@ -975,7 +975,7 @@
     "code": "syrups--blueberry",
     "name": [
      "Blueberry",
-     "بلوبری"
+     "بلو بری"
     ],
     "price": 0,
     "temp": null
@@ -1031,7 +1031,7 @@
   "id": "toppings-add-ons",
   "name": [
    "Toppings / Add-ons",
-   "تاپینگ و افزودنی"
+   "تاپینگ"
   ],
   "blurb": [
    "Swap your milk or add extras when you order",
@@ -1082,7 +1082,7 @@
     "code": "toppings-add-ons--honey-sachet",
     "name": [
      "Honey Sachet",
-     "ساشه عسل"
+     "عسل ساشه ای"
     ],
     "price": 0,
     "temp": null
@@ -1093,7 +1093,7 @@
   "id": "drinks",
   "name": [
    "Drinks",
-   "نوشیدنی‌ها"
+   "نوشیدنی"
   ],
   "blurb": [
    "Bottled and ready to grab",
@@ -1126,7 +1126,7 @@
     "code": "drinks--lemon-fresh",
     "name": [
      "Lemon Fresh",
-     "لمون فرش"
+     "لایمون فرش"
     ],
     "price": 0,
     "temp": null
@@ -1135,7 +1135,7 @@
     "code": "drinks--flavored-cold-coffee",
     "name": [
      "Flavored Cold Coffee",
-     "قهوه سرد طعم‌دار"
+     "قهوه سرد طعم دار"
     ],
     "price": 0,
     "temp": null

@@ -5,14 +5,29 @@ export const FLAVORS = [
   { label: ['Matcha', 'ماچا'], q: ['matcha', 'ماچا'], color: '#7FA34A' },
   { label: ['Pistachio', 'پسته'], q: ['pistachio', 'پسته'], color: '#A7BC5B' },
   { label: ['Ube', 'اوبه'], q: ['ube', 'اوبه'], color: '#7B58A8' },
-  { label: ['Spirulina', 'اسپیرولینا'], q: ['spirulina', 'اسپیرولینا'], color: '#2E8C83' },
+  { label: ['Spirulina', 'اسپرولینا'], q: ['spirulina', 'اسپرولینا'], color: '#2E8C83' },
   { label: ['Chocolate', 'شکلات'], q: ['choco', 'شکلات'], color: '#5A3424' },
-  { label: ['Pumpkin', 'کدو حلوایی'], q: ['pumpkin', 'کدو'], color: '#E07B2A' },
-  { label: ['Strawberry', 'توت‌فرنگی'], q: ['strawberry', 'توت‌فرنگی'], color: '#D6455B' },
+  { label: ['Pumpkin', 'پامکین'], q: ['pumpkin', 'پامکین'], color: '#E07B2A' },
+  { label: ['Strawberry', 'توت فرنگی'], q: ['strawberry', 'توت فرنگی'], color: '#D6455B' },
   { label: ['Lotus', 'لوتوس'], q: ['lotus', 'لوتوس'], color: '#C08A4A' },
   { label: ['Mango', 'انبه'], q: ['mango', 'انبه'], color: '#F5A623' },
   { label: ['Saffron', 'زعفران'], q: ['saffron', 'زعفران'], color: '#E7A10F' },
 ];
+
+// Extra Persian search words for English words in drink names. The menu uses
+// spoken names (هات چاکلت, پامکین), so searching the everyday word (شکلات, کدو) finds them too.
+export const FA_ALIASES = {
+  chocolate: 'شکلات چاکلت چوکو', choco: 'شکلات چاکلت چوکو', mocha: 'شکلات',
+  pumpkin: 'کدو پامکین', cinnamon: 'دارچین سینامون',
+  strawberry: 'توت فرنگی استرابری', coconut: 'نارگیل کوکونات کوکو', coco: 'نارگیل کوکونات کوکو',
+  spirulina: 'اسپیرولینا اسپرولینا', biscuit: 'بیسکویت بیسکو', vanilla: 'وانیل وانیلا',
+  lime: 'لیمو لایم', lemon: 'لیمو لیمون لایمون', lemonade: 'لیموناد لیمو',
+  peanut: 'بادام زمینی', whey: 'وی پروتئین', robusta: 'روبوستا ربوستا', affogato: 'آفوگاتو آفاگاتو',
+  guava: 'گواوا گوآوا', blueberry: 'بلوبری بلو بری', bubble: 'آدامس بابل گام', green: 'سبز گرین گیرین',
+  black: 'سیاه مشکی بلک', red: 'قرمز رد', pink: 'صورتی پینک', white: 'سفید وایت', dark: 'تلخ دارک',
+  coffee: 'قهوه کافی', brew: 'قهوه', espresso: 'قهوه', americano: 'قهوه', latte: 'لاته',
+  tea: 'چای', herbal: 'دمنوش گیاهی', mango: 'انبه', honey: 'عسل', saffron: 'زعفران',
+};
 
 // English word → dot color. A drink's dot shows the first one or two flavors in its name.
 export const SWATCH = {
