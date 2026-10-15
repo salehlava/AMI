@@ -1,0 +1,10 @@
+# Live data: orders, club members (phone numbers, PIN hashes), admin password hash
+data/*.sqlite
+data/*.sqlite-*
+data/sessions/
+
+# Editor and OS clutter
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
