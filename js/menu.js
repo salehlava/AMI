@@ -70,8 +70,9 @@ function itemHtml(it, cat) {
   }
 
   const saved = view.saved.has(it.id);
+  const ariaLabel = soldOut ? `${name}, ${t('soldOut')}` : state.menuOnly ? name : t('addLabel', name);
   return `<li class="item${soldOut ? ' is-out' : ''}" data-id="${it.id}">
-    <button class="item-main" type="button" data-key="${it.key}" ${soldOut ? 'disabled' : ''} aria-label="${esc(soldOut ? `${name}, ${t('soldOut')}` : t('addLabel', name))}">
+    <button class="item-main" type="button" data-key="${it.key}" ${soldOut || state.menuOnly ? 'disabled' : ''} aria-label="${esc(ariaLabel)}">
       ${dot}${label}<span class="lead" aria-hidden="true"></span>${priceOrState}<span class="add-ic" aria-hidden="true">${ICONS.plus}</span>
     </button>
     <button class="fav" type="button" aria-pressed="${saved}" aria-label="${esc(saved ? t('unsave', name) : t('save', name))}">${ICONS.heart}</button>

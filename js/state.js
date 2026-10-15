@@ -3,6 +3,7 @@ export const state = {
   menu: null,          // { categories, settings } from the server
   itemsByKey: new Map(), // database id → { item, cat }
   member: null,        // logged-in club member, or null
+  menuOnly: false,     // true when there is no server (e.g. GitHub Pages): browse only
 };
 
 const bus = new EventTarget();

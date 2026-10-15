@@ -1,11 +1,17 @@
 # AMI Café
 
+**[Open the menu →](https://salehlava.github.io/AMI/)**
+
 Menu, ordering and customer club for AMI café, in English and Persian (فارسی).
 
 - **Menu**: search, flavor shortcuts, hot/cold filters, foldable sections, saved drinks, light and dark themes.
 - **Basket (سبد خرید)**: pick syrups and milk, add notes, order for a table or takeaway, follow the order status live. Customers pay at the counter.
 - **Customer club (باشگاه مشتریان)**: join with a mobile number and a 4-digit PIN, one stamp per drink, a free drink every 10 stamps, Member / Silver / Gold tiers.
 - **Admin panel**: live order board with a sound alert, menu and price editing, sold-out switch, club members, settings.
+
+## Online menu
+
+https://salehlava.github.io/AMI/ shows the menu straight from this repository (GitHub Pages). GitHub Pages cannot run PHP, so that copy is browse-only: search, filters, saved drinks, Persian and dark mode work; the basket, club and admin panel need the PHP server below. It shows the starting menu from `api/seed/menu.json`, so prices you set in the admin panel appear only on the café server.
 
 ## Run it
 

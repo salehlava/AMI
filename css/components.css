@@ -76,6 +76,22 @@
   }
 }
 
+/* ---------- Menu-only mode (no server, e.g. GitHub Pages) ---------- */
+.menu-only #clubBtn,
+.menu-only #basketBtn,
+.menu-only .basket-bar,
+.menu-only .add-ic {
+  display: none !important;
+}
+.menu-only .item-main {
+  grid-template-columns: 14px minmax(0, max-content) minmax(18px, 1fr) auto;
+}
+@media (max-width: 480px) {
+  .menu-only .item-main {
+    grid-template-columns: 12px minmax(0, max-content) minmax(12px, 1fr) auto;
+  }
+}
+
 /* ---------- Floating basket bar ---------- */
 .basket-bar {
   position: fixed;
