@@ -48,7 +48,7 @@ async function loadSeedMenu() {
   return {
     categories: seed.map(c => ({
       id: c.id, name: c.name, blurb: c.blurb, color: c.color, temp: c.temp, extra: c.extra, keys: c.keys,
-      items: c.items.map(it => ({ key: ++key, id: it.code, names: it.name, price: it.price, temp: it.temp, available: true })),
+      items: c.items.map(it => ({ key: ++key, id: it.code, names: it.name, price: it.price, temp: it.temp, available: it.available !== false })),
     })),
     settings: { orderingOpen: false, currency: ['', ''], stampsPerReward: 10, defaultLang: 'en' },
   };

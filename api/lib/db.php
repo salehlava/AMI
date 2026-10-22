@@ -116,14 +116,15 @@ function seed_menu(PDO $pdo): void
     $menu = json_decode((string)file_get_contents(SEED_FILE), true, 64, JSON_THROW_ON_ERROR);
     $cat = $pdo->prepare('INSERT INTO categories (id, name_en, name_fa, blurb_en, blurb_fa, color, temp, extra, keywords, sort)
                           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
-    $item = $pdo->prepare('INSERT INTO items (code, category_id, name_en, name_fa, price, temp, sort)
-                           VALUES (?, ?, ?, ?, ?, ?, ?)');
+    $item = $pdo->prepare('INSERT INTO items (code, category_id, name_en, name_fa, price, temp, available, sort)
+                           VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
     $pdo->beginTransaction();
     foreach ($menu as $ci => $c) {
         $cat->execute([$c['id'], $c['name'][0], $c['name'][1], $c['blurb'][0], $c['blurb'][1], $c['color'],
                        $c['temp'], $c['extra'] ? 1 : 0, $c['keys'], $ci]);
         foreach ($c['items'] as $ii => $it) {
-            $item->execute([$it['code'], $c['id'], $it['name'][0], $it['name'][1], (int)$it['price'], $it['temp'], $ii]);
+            $available = ($it['available'] ?? true) ? 1 : 0;
+            $item->execute([$it['code'], $c['id'], $it['name'][0], $it['name'][1], (int)$it['price'], $it['temp'], $available, $ii]);
         }
     }
     $pdo->commit();
