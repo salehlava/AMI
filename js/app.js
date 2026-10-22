@@ -41,7 +41,7 @@ function setLanguage(lang) {
 /* Without the PHP server (e.g. on GitHub Pages) the page shows the starting
    menu from the seed file, browse-only: no basket, club or ordering. */
 async function loadSeedMenu() {
-  const res = await fetch('api/seed/menu.json');
+  const res = await fetch('api/seed/menu.json', { cache: 'no-cache' }); // always the newest prices
   if (!res.ok) throw new Error('no seed menu');
   const seed = await res.json();
   let key = 0;
