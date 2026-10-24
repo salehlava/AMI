@@ -28,7 +28,7 @@ On Windows, double-click `start.bat` (menu) or `start-admin.bat` (admin panel). 
 
 The first run creates `data/ami.sqlite` and fills the menu from `api/seed/menu.json`.
 
-**The first admin password is `ami1234`. Change it in Admin → Settings before customers use the site.**
+**The first admin password is `ami1234`. On first sign-in the panel stays locked until you choose a new one** (after 5 wrong passwords, sign-in pauses for 10 minutes).
 
 ## Project layout
 

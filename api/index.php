@@ -36,12 +36,15 @@ $admin = [
     'POST admin-password' => fn() => admin_password(body()),
 ];
 
+// Open while the default password is still in use, so it can be changed
+$setup = ['GET admin-settings', 'POST admin-password'];
+
 $key = "$method $route";
 
 try {
     if (isset($public[$key])) respond($public[$key]());
     if (isset($admin[$key])) {
-        require_admin();
+        require_admin(in_array($key, $setup, true));
         respond($admin[$key]());
     }
     fail('not_found', 404);

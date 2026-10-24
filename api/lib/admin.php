@@ -2,29 +2,58 @@
 /* Admin panel: login, menu editing, club members, settings */
 declare(strict_types=1);
 
-function require_admin(): void
+const MAX_ADMIN_TRIES = 5;
+const ADMIN_LOCK_SECONDS = 600;
+
+/** Ties an admin session to the current password, so changing it signs out every other device */
+function admin_stamp(): string
 {
-    if (empty($_SESSION['admin'])) fail('unauthorized', 401);
+    return substr(hash('sha256', setting('admin_hash')), 0, 32);
+}
+
+function is_admin(): bool
+{
+    return is_string($_SESSION['admin'] ?? null) && hash_equals(admin_stamp(), $_SESSION['admin']);
+}
+
+function using_default_password(): bool
+{
+    return password_verify(DEFAULT_ADMIN_PASSWORD, setting('admin_hash'));
+}
+
+/** $setup: routes still allowed while the default password is in use (it is public in the code) */
+function require_admin(bool $setup = false): void
+{
+    if (!is_admin()) fail('unauthorized', 401);
+    if (!$setup && using_default_password()) fail('change_password', 403);
 }
 
 function admin_me(): array
 {
-    $in = !empty($_SESSION['admin']);
+    $in = is_admin();
     return [
         'loggedIn' => $in,
-        'defaultPassword' => $in && password_verify(DEFAULT_ADMIN_PASSWORD, setting('admin_hash')),
+        'defaultPassword' => $in && using_default_password(),
     ];
 }
 
 function admin_login(array $in): array
 {
+    if ((int)setting('admin_locked_until') > time()) fail('locked', 429);
     $password = (string)($in['password'] ?? '');
     if (!password_verify($password, setting('admin_hash'))) {
         usleep(800000); // slows down password guessing
+        $fails = (int)setting('admin_fails') + 1;
+        if ($fails >= MAX_ADMIN_TRIES) {
+            save_setting('admin_locked_until', (string)(time() + ADMIN_LOCK_SECONDS));
+            $fails = 0;
+        }
+        save_setting('admin_fails', (string)$fails);
         fail('wrong_password', 401);
     }
+    save_setting('admin_fails', '0');
     session_regenerate_id(true);
-    $_SESSION['admin'] = true;
+    $_SESSION['admin'] = admin_stamp();
     return admin_me();
 }
 
@@ -39,7 +68,10 @@ function admin_password(array $in): array
     if (!password_verify((string)($in['current'] ?? ''), setting('admin_hash'))) fail('wrong_password', 401);
     $next = (string)($in['next'] ?? '');
     if (strlen($next) < 6 || strlen($next) > 200) fail('weak_password');
+    if ($next === DEFAULT_ADMIN_PASSWORD) fail('weak_password');
     save_setting('admin_hash', password_hash($next, PASSWORD_DEFAULT));
+    session_regenerate_id(true);
+    $_SESSION['admin'] = admin_stamp(); // this device stays signed in, all others are signed out
     return ['ok' => true];
 }
 

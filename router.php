@@ -28,6 +28,9 @@ $ext = strtolower(pathinfo($file ?: '', PATHINFO_EXTENSION));
 if ($file && is_file($file) && str_starts_with($file, __DIR__) && isset($types[$ext])) {
     header('Content-Type: ' . $types[$ext]);
     header('Cache-Control: no-cache');
+    header('X-Content-Type-Options: nosniff');
+    header('X-Frame-Options: DENY'); // no other site can show these pages in a frame
+    header('Referrer-Policy: same-origin');
     readfile($file);
     return true;
 }

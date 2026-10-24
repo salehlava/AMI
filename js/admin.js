@@ -88,6 +88,11 @@ function handleError(err, target) {
     showLogin(errorText('unauthorized'));
     return;
   }
+  if (err.code === 'change_password') {
+    if (ui.tab !== 'settings') switchTab('settings');
+    toast(errorText('change_password'));
+    return;
+  }
   const msg = errorText(err.code);
   if (target) target.textContent = msg;
   else toast(msg);
@@ -129,7 +134,13 @@ async function enterPanel(me) {
   } catch (err) {
     handleError(err);
   }
+  // The default password is public, so the server keeps the panel locked until it is changed
+  if (me.defaultPassword) { switchTab('settings'); return; }
   switchTab(ui.tab);
+  await startOrders();
+}
+
+async function startOrders() {
   await loadOrders();
   clearInterval(pollTimer);
   pollTimer = setInterval(loadOrders, POLL_MS);
@@ -159,6 +170,10 @@ async function signOut() {
 
 /* ---------- Tabs ---------- */
 function switchTab(tab) {
+  if (!el.pwBanner.hidden && tab !== 'settings') { // locked until the default password is changed
+    toast(errorText('change_password'));
+    tab = 'settings';
+  }
   ui.tab = tab;
   store.set(KEYS.tab, tab);
   $$('[data-tab]').forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === tab)));
@@ -220,7 +235,7 @@ async function loadOrders() {
     noticeNewOrders();
     if (ui.tab === 'orders') renderOrders();
   } catch (err) {
-    if (err.code === 'unauthorized') return handleError(err);
+    if (err.code === 'unauthorized' || err.code === 'change_password') return handleError(err);
     el.offlineBanner.hidden = false;
   }
 }
@@ -673,8 +688,10 @@ async function submitPassword(form) {
   try {
     await api('admin-password', { current: f.get('current'), next: f.get('next') });
     form.reset();
+    const wasLocked = !el.pwBanner.hidden;
     el.pwBanner.hidden = true;
     toast(t('passwordChanged'));
+    if (wasLocked) await startOrders();
   } catch (err) {
     handleError(err, error);
   }
@@ -696,7 +713,13 @@ function bindEvents() {
   document.addEventListener('pointerdown', unlockAudio, { once: true });
 
   $$('[data-tab]').forEach(b => b.addEventListener('click', () => switchTab(b.dataset.tab)));
-  $$('[data-goto-tab]').forEach(b => b.addEventListener('click', () => switchTab(b.dataset.gotoTab)));
+  // The banner's "Change password": open Settings and jump straight to the password form
+  $$('[data-goto-tab]').forEach(b => b.addEventListener('click', () => {
+    if (ui.tab !== b.dataset.gotoTab) switchTab(b.dataset.gotoTab);
+    const form = $('#passwordForm');
+    form?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    $('[name=current]', form)?.focus({ preventScroll: true });
+  }));
 
   // Orders
   el.panels.orders.addEventListener('click', e => {
