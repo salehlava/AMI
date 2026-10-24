@@ -729,3 +729,62 @@
 :root[lang="fa"] :is(.login-card h1, .admin-cat h2, .col h2, .settings-card h2) {
   letter-spacing: 0;
 }
+
+/* ---------- Online admin (admin/) ---------- */
+.login-card-wide {
+  width: min(100%, 520px);
+}
+.gate-link {
+  margin-inline: auto;
+}
+.check-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: .95rem;
+  cursor: pointer;
+}
+.check-row input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+}
+.setup-steps {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-inline-start: 1.3em;
+  color: var(--muted);
+  font-size: .92rem;
+  line-height: 1.6;
+}
+.setup-steps a {
+  color: var(--accent);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+/* Unpublished changes: a bar along the bottom of the screen */
+.publish-bar {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 25;
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: 0 -10px 30px -16px rgba(0, 0, 0, .35);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.publish-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-block: 12px;
+}
+.publish-count {
+  margin-inline-end: auto;
+  font-weight: 650;
+}
+.has-publish-bar .tab-panel {
+  padding-bottom: 110px;
+}

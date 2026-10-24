@@ -11,7 +11,15 @@ Menu, ordering and customer club for AMI café, in English and Persian (فارس
 
 ## Online menu
 
-https://salehlava.github.io/AMI/ shows the menu straight from this repository (GitHub Pages). GitHub Pages cannot run PHP, so that copy is browse-only: search, filters, saved drinks, Persian and dark mode work; the basket, club and admin panel need the PHP server below. It shows the starting menu from `api/seed/menu.json`, so prices you set in the admin panel appear only on the café server.
+https://salehlava.github.io/AMI/ shows the menu straight from this repository (GitHub Pages). GitHub Pages cannot run PHP, so that copy is browse-only: search, filters, saved drinks, Persian and dark mode work; the basket, club and admin panel need the PHP server below. It shows the menu from `api/seed/menu.json`.
+
+## Online admin
+
+https://salehlava.github.io/AMI/admin/ edits the online menu from anywhere: prices, sold out, names, adding and deleting drinks. Changes collect in a Publish bar; Publish saves `api/seed/menu.json` to this repository through the GitHub API, and the menu updates about a minute later. Every publish is a commit, so old menus can be brought back.
+
+First visit: the page asks once for a fine-grained GitHub token (only this repository, Contents: Read and write) and a username + password. The token is stored in `admin/auth.json`, locked with AES-256-GCM using a key made from the username and password (PBKDF2-SHA256, 600,000 rounds). That file is public, so use a strong password (at least 10 characters).
+
+The café server's admin panel (below) keeps its own database; the online admin changes only the online menu.
 
 ## Run it
 
@@ -33,9 +41,10 @@ The first run creates `data/ami.sqlite` and fills the menu from `api/seed/menu.j
 ## Project layout
 
 ```
-index.html, admin.html   pages
+index.html, admin.html   pages (admin.html needs the PHP server)
+admin/                   online admin for GitHub Pages (admin/auth.json = locked GitHub token)
 css/                     style.css (menu), components.css (shared), admin.css
-js/                      ES modules: app.js and admin.js are the entry points
+js/                      ES modules: app.js, admin.js and gh-admin.js are the entry points
 api/index.php            JSON API (api/index.php?r=<route>)
 api/lib/                 database, orders, club, admin logic
 api/seed/menu.json       starting menu
