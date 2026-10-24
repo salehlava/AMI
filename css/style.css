@@ -101,9 +101,6 @@
   letter-spacing: 0;
   text-transform: none;
 }
-:root[lang="fa"] .wordmark {
-  font-family: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
-}
 :root[lang="fa"] .eyebrow,
 :root[lang="fa"] .flavors-label,
 :root[lang="fa"] .index-label {
@@ -325,13 +322,15 @@ mark {
   margin: 0;
 }
 
+/* The café's "Ami" logo, drawn in the text color: black on light, white on dark */
 .wordmark {
-  font-family: var(--display);
-  font-weight: 800;
-  font-variation-settings: "opsz" 96;
-  font-size: clamp(4.25rem, 17vw, 8.75rem);
-  line-height: .78;
-  letter-spacing: -.045em;
+  display: block;
+  flex: none;
+  height: clamp(3.5rem, 14vw, 7rem);
+  aspect-ratio: 1041 / 451;
+  background-color: var(--ink);
+  -webkit-mask: url("../logo/ami-logo-black.png") center / contain no-repeat;
+  mask: url("../logo/ami-logo-black.png") center / contain no-repeat;
 }
 
 .brand-tag {
