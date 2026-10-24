@@ -45,6 +45,7 @@
 .login {
   display: grid;
   place-items: center;
+  max-width: none; /* the menu page caps <main> at 740px */
   min-height: 100dvh;
   padding: 24px 16px;
 }
