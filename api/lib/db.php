@@ -102,7 +102,7 @@ function migrate(PDO $pdo): void
         'currency_en' => '',
         'currency_fa' => '',
         'stamps_per_reward' => '10',
-        'default_lang' => 'en',
+        'default_lang' => 'fa',
     ];
     $insert = $pdo->prepare('INSERT OR IGNORE INTO settings (key, value) VALUES (?, ?)');
     foreach ($defaults as $k => $v) $insert->execute([$k, $v]);

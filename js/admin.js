@@ -805,7 +805,7 @@ function bindEvents() {
 async function start() {
   useStrings(ADMIN_STRINGS);
   initTheme();
-  applyLanguage(store.get(KEYS.lang, (navigator.language || '').toLowerCase().startsWith('fa') ? 'fa' : 'en'));
+  applyLanguage(store.get(KEYS.lang, 'fa')); // Persian unless this device picked English
   bindEvents();
   try {
     const me = await api('admin-me');
